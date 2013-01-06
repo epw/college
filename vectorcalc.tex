@@ -1,16 +1,90 @@
 \begin{center}\section{Vector Calculus}\end{center}
 
-- Basis as similar to axes of a space
+This is calculus when applied to vectors and matricies. Basic
+multivariable calculus just requires doing the same math as for one
+variable, but repeated. This type of calculus uses the interactions
+between dimensions that can arise.
 
-- Ways to remember cross product
+\bigskip
 
-- Scalar Triple Product (Determinant of a 3x3)
+\subsection{Cross Product}
+\vspace{-1em}
+\begin{eqnarray*}
+{\vec a} \times {\vec b}
+&=& a_1b_2{\vec e_3} - a_1b_3{\vec e_2} - a_2b_1{\vec e_3}
++a_2b_3{\vec e_1} +a_3b_1{\vec e_2} -a_3b_2{\vec e_1} \\
+&=& (a_2b_3 - a_3b_2){\vec e_1} + (a_3b_1 - a_1b_3){\vec e_2} +
+(a_1b_2 - a_2b_1){\vec e_3}
+\end{eqnarray*}
 
-- Vector Triple Product
+\subsection{Scalar Triple Product}
 
-- Fields
+\begin{eqnarray*}
+{\vec a} \cdot {\vec b} \times {\vec c}
+&=& a_1(b_2c_3 - b_3c_2) - a_2(b_1c_3 - b_3c_1) + a_3(b_1c_2 - b_2c_1)
+\\
+&=& \begin{vmatrix}
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3 \\
+c_1 & c_2 & c_3
+\end{vmatrix} \\
+&=& {\vec b} \cdot {\vec c} \times {\vec a}
+= {\vec c} \cdot {\vec a} \times {\vec b}
+\end{eqnarray*}
 
-- Line Integrals, in particular Work, other forms
+That is, the scalar triple product is a particular form, whose
+expansion happens to be the determinant of the three vectors
+involved. Notice that the first line is simply the three pieces of the
+cross product, each times the corresponding piece of ${\vec a}$.
+
+The magnitude of the cross product of two vectors is the
+area of the parallelogram they define. Similarly, the scalar triple
+product is the volume of the parallelepiped the three vectors define.
+
+There is also a {\bf Vector Triple Product},
+${\vec a} \times {\vec b} \times {\vec c}$.
+
+\subsection{Fields}
+
+A function of position is a {\em field}, whether scalar or vector. 
+
+\subsection{Line Integrals}
+
+A line integral is the integral of a field along a path. With a simple
+function, this could give the length of a line or curve. 
+
+Given a particle in a field which exerts force based on position, a
+line integral gives the work needed to make the particle move along a
+path.
+
+$$ \text{Work} = - \text{Force} \cdot \text{distance} $$
+
+The negative is to account for the force from the field acting one
+way, and the work that has to be input to move the particle being the
+other.
+
+\[
+W = \displaystyle\sum\limits_{i=1}^N{\vec F}(r_i) \cdot \Delta r_i
+\text{, or in limit: }
+\int_{t=a}^{t=b}{\vec F}({\vec r}) \cdot d{\vec r}
+\]
+
+\subsubsection{Example}
+
+{\bf Path:} $ x = t, y = t, z = 2t^2, 0 \leq t \leq 1 $
+
+\noindent {\bf Force:} $ F = (y, x, z) $
+
+\begin{eqnarray*}
+W
+&=& \int\limits_C (y, x, z) \cdot d{\vec r},\hspace{5ex} {\vec r} = (t, t, 2t^2)
+\\
+&=& \int\limits_C (y, x, z) \cdot \frac{d{\vec r}}{dt}dt,\hspace{5ex}
+\frac{d{\vec r}}{dt} = (1, 1, 4t) \\
+&=& \int_0^1(t, t, 2t^2) \cdot (1, 1, 4t) dt = \int_0^1(2t + 8t^3)dt
+= 3
+\end{eqnarray*}
+
 
 - Conservative vector field: integral around closed loop = 0
 
