@@ -1,0 +1,62 @@
+\section{Differential Equations}
+
+Ordinary differential equation (ODE) only uses x, y(x), y'(x). Trying
+to get standard $y = f(x)$ form. Look at start, see what form you can
+get into.
+
+\begin{multicols}{2}
+
+\section{y' = X(x)Y(y)}
+
+$$ y' = X(x)Y(y) = \frac{dy}{dx} $$
+$$ \frac{1}{Y(y)}dy = X(x)dx $$
+$$ \int\frac{1}{Y(y)}dy = \int X(x)dx $$, then solve for y.
+
+\subsection{Example}
+
+$$ y' = \frac{4y}{x} $$
+$$ X(x) = \frac{1}{x}, Y(y) = 4y $$
+$$ \int\frac{1}{4y}dy = \int\frac{1}{x}dx  $$
+$$ \frac{1}{4}\ln|y| = \ln|x| + C $$
+$$ \ln|y| = 4\ln|x| + C $$
+$$ y = Cx^4 $$
+\columnbreak
+
+\section{y' + p(x)y = q(x)}
+
+Make up a useful u(x), multiply both sides with it and pull a fast one
+with the multiplication rule, only divide out at the end.
+
+$$ u(x) = e^{\int p(x)dx}, \frac{du}{dx} = p(x)u(x) $$ (because of the
+$e^x$)
+$$ u(x)(y' + p(x)y) = u(x)q(x) $$
+$$ (u(x)y)' = u(x)q(x) $$ (because $(fg)' = f'g * fg'$)
+$$ \int (u(x)y)' dx = \int u(x)q(x)dx $$
+$$ y = \frac{1}{u(x)}\int u(x)q(x)dx $$
+
+\subsection{Example}
+
+$$ y' - 2xy = x $$
+$$ p(x) = -2x, q(x) = 1, u(x) = e^{\int -2xdx} = Ce^{-x^2} $$
+$$ y = Ce^{x^2}\int Cxe^{-x^2}dx $$
+use integration by parts
+$$ y = Ce^{x^2}(-\frac{1}{2}e^{-x^2} + C)$$
+$$ y = Ce^{x^2} - \frac{1}{2} $$
+\end{multicols}
+
+\section{Second Order ODEs}
+
+$ y'' + p(x)y' + q(x)y = g(x) $ is easiest. If $g(x) = 0$, it's
+``homogeneous'' and is even easier. If $p(x)$ and $q(x)$ are
+constants, then $y''$ can also have a constant factor, and the
+solution is $ y = C_1e^x + C_2e^{-x} $. If there's no $y$ term, set
+$u = y', u' = y''$ to make a 1st-order ODE.
+
+\section{Partial Differential Equations}
+
+Assume PDE's solution will have separated variables, so $ f(x, y) =
+X(x)Y(y) $. Feed that assumption through the given equation, to try to
+get functions of any variable $x$ together with the corresponding
+$dx$. Set the equation equal to a constant. Now you can break the
+equation into two differential equations in just one variable each.
+

@@ -4,7 +4,8 @@
 \usepackage{color}
 \usepackage{url}
 \usepackage{amsmath}
-
+\usepackage{multicol}
+\usepackage[explicit]{titlesec}
 \usepackage{fontspec}
 \usepackage{fancyhdr}
 
@@ -14,6 +15,11 @@
 \setlength{\headheight}{15pt}
 \setlength{\oddsidemargin}{-0.25in}
 \setlength{\textwidth}{6.75in}
+
+\titleformat{\section}
+            {\Large\bfseries\centering}{}{0em}{#1}
+
+\titlespacing{\section}{0em}{1em}{0em}
 
 \setcounter{secnumdepth}{-1}
 
@@ -43,5 +49,8 @@ to a couple pages.
 
 \newpage
 \input{vectorcalc}
+
+\newpage
+\input{diffeqs}
 
 \end{document}

@@ -1,4 +1,4 @@
-\begin{center}\section{Calculus}\end{center}
+\section{Calculus}
 
 \newcommand{\DERIVATIVE}{\frac{d}{dx}}
 
@@ -27,7 +27,30 @@ $ \DERIVATIVE[\cos{x}] = -\sin{x} $
 
 \vspace{1em}
 
+$ \DERIVATIVE[e^{ax}] = ae^{x} $
+\hspace{5ex}
+$ \int e^{ax}dx = \frac{1}{a}e^{ax} + C $
+\hspace{5ex}
+$ \DERIVATIVE[\ln x] = \frac{1}{x} $
+\hspace{5ex}
+$ \int\frac{1}{x}dx = \ln|x| + C $
+\vspace{1em}
+
 $ \int_b^a f(x)\,dx = [F(x)]_b^a = F(a) - F(b)$
 \hspace{5ex}
 $ \int x^b\,dx = \frac{1}{b+1}x^{b+1} + C $
 \hspace{5ex}
+
+
+\section{Integration by Parts}
+
+Get a hard equation into one you know how to integrate, by playing
+games with canceling. Find a $u$ that you can use to rewrite the
+integral into a form you'll be able to solve, then rewrite using that,
+and sub $x$ back in at the end. Starting with $\int xe^{x^2}dx$.
+
+\vspace{-2em}
+
+\[ u = x^2, du = 2xdx, x = \sqrt{u}, dx = \frac{1}{2\sqrt{u}}du :
+\int xe^{x^2}dx = \int \sqrt{u}e^u\frac{1}{2\sqrt{u}}du =
+\frac{1}{2}\int e^udu = \frac{e^u}{2} + C = \frac{e^{x^2}}{2} + C \]
